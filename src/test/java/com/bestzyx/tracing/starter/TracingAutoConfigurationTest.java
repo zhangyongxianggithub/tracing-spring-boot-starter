@@ -21,7 +21,7 @@ class TracingAutoConfigurationTest {
     void startJob1Test() {
         new ApplicationContextRunner()
                 .withPropertyValues(
-                        "logging.level.com.bestzyx=debug")
+                        "logging.level.com=debug")
                 .withInitializer(ConditionEvaluationReportLoggingListener
                         .forLogLevel(LogLevel.INFO))
                 .withConfiguration(
@@ -33,7 +33,7 @@ class TracingAutoConfigurationTest {
     void startJob2Test() {
         new ApplicationContextRunner()
                 .withPropertyValues(
-                        "logging.level.com.bestzyx=debug")
+                        "logging.level.com=debug")
                 .withInitializer(ConditionEvaluationReportLoggingListener
                         .forLogLevel(LogLevel.INFO))
                 .withConfiguration(
@@ -45,7 +45,7 @@ class TracingAutoConfigurationTest {
     void datasourceTest() {
         new ApplicationContextRunner()
                 .withPropertyValues(
-                        "logging.level.com.bestzyx=debug")
+                        "logging.level.com=debug")
                 .withInitializer(ConditionEvaluationReportLoggingListener
                         .forLogLevel(LogLevel.INFO))
                 .withConfiguration(
