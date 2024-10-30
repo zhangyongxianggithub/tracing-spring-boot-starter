@@ -1,4 +1,4 @@
-package com.baidu.gbi.dataengine.tracing;
+package com.bestzyx.tracing.starter;
 
 import org.apache.http.HttpRequest;
 import org.apache.http.HttpRequestInterceptor;

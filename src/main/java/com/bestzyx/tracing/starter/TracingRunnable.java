@@ -1,9 +1,8 @@
-package com.baidu.gbi.dataengine.tracing;
+package com.bestzyx.tracing.starter;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.Callable;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,12 +12,12 @@ import org.springframework.util.StringUtils;
 /**
  * @author zhangyongxiang
  */
-public class TracingCallable<T> implements Callable<T> {
+public class TracingRunnable implements Runnable {
     
     private static final Logger LOGGER = LoggerFactory
-            .getLogger(TracingCallable.class);
+            .getLogger(TracingRunnable.class);
     
-    private final Callable<T> callable;
+    private final Runnable runnable;
     
     private final Map<String, String> context;
     
@@ -26,9 +25,9 @@ public class TracingCallable<T> implements Callable<T> {
     
     private final ThreadTraceIdGenerator threadTraceIdGenerator;
     
-    public TracingCallable(final Callable<T> callable, final String traceKey,
+    public TracingRunnable(final Runnable runnable, final String traceKey,
             final ThreadTraceIdGenerator threadTraceIdGenerator) {
-        this.callable = callable;
+        this.runnable = runnable;
         this.context = MDC.getCopyOfContextMap();
         this.traceKey = traceKey;
         this.threadTraceIdGenerator = threadTraceIdGenerator;
@@ -40,16 +39,17 @@ public class TracingCallable<T> implements Callable<T> {
     }
     
     @Override
-    public T call() throws Exception {
+    public void run() {
         try {
             MDC.setContextMap(
                     Optional.ofNullable(context).orElseGet(HashMap::new));
             if (!StringUtils.hasText(MDC.get(traceKey))) {
                 MDC.put(traceKey, threadTraceIdGenerator.createTraceId());
             }
-            return callable.call();
+            runnable.run();
         } finally {
             MDC.clear();
         }
+        
     }
 }

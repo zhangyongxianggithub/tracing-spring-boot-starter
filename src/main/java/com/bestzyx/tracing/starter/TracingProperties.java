@@ -1,4 +1,4 @@
-package com.baidu.gbi.dataengine.tracing;
+package com.bestzyx.tracing.starter;
 
 import java.util.List;
 import java.util.Objects;
@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import static java.util.Collections.singletonList;
 
 /**
- * @author zhangyongxiang@baidu.com
+ * @author zhangyongxiang
  */
 @ConfigurationProperties(prefix = "gbi.tracing")
 @SuppressWarnings({ "LombokGetterMayBeUsed", "LombokSetterMayBeUsed" })

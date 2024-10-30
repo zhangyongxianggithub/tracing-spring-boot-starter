@@ -1,4 +1,4 @@
-package com.baidu.gbi.dataengine.tracing;
+package com.bestzyx.tracing.starter;
 
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

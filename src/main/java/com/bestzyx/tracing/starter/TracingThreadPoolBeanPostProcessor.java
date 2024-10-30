@@ -1,4 +1,4 @@
-package com.baidu.gbi.dataengine.tracing;
+package com.bestzyx.tracing.starter;
 
 import java.util.concurrent.ExecutorService;
 
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.lang.NonNull;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
-import static com.baidu.gbi.dataengine.tracing.TracingThreadPoolTaskExecutorWrapper.wrapIfEnableTracing;
+import static com.bestzyx.tracing.starter.TracingThreadPoolTaskExecutorWrapper.wrapIfEnableTracing;
 
 /**
  * Created by zhangyongxiang on 2024/4/7 3:03 PM

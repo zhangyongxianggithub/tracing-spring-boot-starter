@@ -1,4 +1,4 @@
-package com.baidu.gbi.dataengine.tracing;
+package com.bestzyx.tracing.starter;
 
 import java.io.Serial;
 import java.util.concurrent.Callable;

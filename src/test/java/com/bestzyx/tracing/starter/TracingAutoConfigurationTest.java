@@ -1,4 +1,4 @@
-package com.baidu.gbi.dataengine.tracing;
+package com.bestzyx.tracing.starter;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -21,7 +21,7 @@ class TracingAutoConfigurationTest {
     void startJob1Test() {
         new ApplicationContextRunner()
                 .withPropertyValues(
-                        "logging.level.com.baidu.gbi.dataengine.sdk=debug")
+                        "logging.level.com.bestzyx=debug")
                 .withInitializer(ConditionEvaluationReportLoggingListener
                         .forLogLevel(LogLevel.INFO))
                 .withConfiguration(
@@ -33,7 +33,7 @@ class TracingAutoConfigurationTest {
     void startJob2Test() {
         new ApplicationContextRunner()
                 .withPropertyValues(
-                        "logging.level.com.baidu.gbi.dataengine.sdk=debug")
+                        "logging.level.com.bestzyx=debug")
                 .withInitializer(ConditionEvaluationReportLoggingListener
                         .forLogLevel(LogLevel.INFO))
                 .withConfiguration(
@@ -45,7 +45,7 @@ class TracingAutoConfigurationTest {
     void datasourceTest() {
         new ApplicationContextRunner()
                 .withPropertyValues(
-                        "logging.level.com.baidu.gbi.dataengine.sdk=debug")
+                        "logging.level.com.bestzyx=debug")
                 .withInitializer(ConditionEvaluationReportLoggingListener
                         .forLogLevel(LogLevel.INFO))
                 .withConfiguration(

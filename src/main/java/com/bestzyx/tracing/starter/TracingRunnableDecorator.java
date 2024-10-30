@@ -1,4 +1,4 @@
-package com.baidu.gbi.dataengine.tracing;
+package com.bestzyx.tracing.starter;
 
 import org.springframework.core.task.TaskDecorator;
 import org.springframework.lang.NonNull;
