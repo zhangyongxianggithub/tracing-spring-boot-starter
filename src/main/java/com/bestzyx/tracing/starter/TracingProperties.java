@@ -11,7 +11,7 @@ import static java.util.Collections.singletonList;
 /**
  * @author zhangyongxiang
  */
-@ConfigurationProperties(prefix = "gbi.tracing")
+@ConfigurationProperties(prefix = "zyx.tracing")
 @SuppressWarnings({ "LombokGetterMayBeUsed", "LombokSetterMayBeUsed" })
 public class TracingProperties {
     

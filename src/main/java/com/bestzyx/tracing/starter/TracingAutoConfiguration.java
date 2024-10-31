@@ -25,7 +25,7 @@ public class TracingAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnWebApplication
-    @ConditionalOnProperty(prefix = "gbi.tracing.http-tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing.http-tracing",
             name = "enable-http-tracing", matchIfMissing = true)
     public HttpTracingFilter httpTracingFilter(
             final TracingProperties tracingProperties,
@@ -34,7 +34,7 @@ public class TracingAutoConfiguration {
     }
     
     @Configuration
-    @ConditionalOnProperty(prefix = "gbi.tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing",
             name = "enable-thread-tracing", matchIfMissing = true)
     @ConditionalOnClass(
             name = "org.springframework.boot.task.ThreadPoolTaskExecutorCustomizer")
@@ -51,7 +51,7 @@ public class TracingAutoConfiguration {
     }
     
     @Configuration
-    @ConditionalOnProperty(prefix = "gbi.tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing",
             name = "enable-thread-tracing", matchIfMissing = true)
     @ConditionalOnMissingClass("org.springframework.boot.task.ThreadPoolTaskExecutorCustomizer")
     @ConditionalOnClass(
@@ -72,7 +72,7 @@ public class TracingAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnWebApplication
-    @ConditionalOnProperty(prefix = "gbi.tracing.http-tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing.http-tracing",
             name = "enable-http-tracing", matchIfMissing = true)
     public HttpTraceIdGenerator httpTraceIdGenerator() {
         return new UuidHttpTraceIdGenerator();
@@ -81,7 +81,7 @@ public class TracingAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnWebApplication
-    @ConditionalOnProperty(prefix = "gbi.tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing",
             name = "enable-thread-tracing", matchIfMissing = true)
     public ThreadTraceIdGenerator threadTraceIdGenerator() {
         return new UuidThreadTraceIdGenerator();
@@ -89,7 +89,7 @@ public class TracingAutoConfiguration {
     
     @Configuration
     @ConditionalOnClass(name = "org.apache.http.HttpRequestInterceptor")
-    @ConditionalOnProperty(prefix = "gbi.tracing.http-tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing.http-tracing",
             name = "enable-http-tracing", matchIfMissing = true)
     static class ApacheHttpClientConfiguration {
         
@@ -103,7 +103,7 @@ public class TracingAutoConfiguration {
     @Configuration
     @ConditionalOnClass(
             name = "org.apache.hc.core5.http.HttpRequestInterceptor")
-    @ConditionalOnProperty(prefix = "gbi.tracing.http-tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing.http-tracing",
             name = "enable-http-tracing", matchIfMissing = true)
     static class ApacheHttpClient5Configuration {
         
@@ -116,7 +116,7 @@ public class TracingAutoConfiguration {
     
     @Configuration
     @ConditionalOnClass(name = "com.squareup.okhttp.Interceptor")
-    @ConditionalOnProperty(prefix = "gbi.tracing.http-tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing.http-tracing",
             name = "enable-http-tracing", matchIfMissing = true)
     static class OkHttpConfiguration {
         @Bean
@@ -128,7 +128,7 @@ public class TracingAutoConfiguration {
     }
     
     @Bean
-    @ConditionalOnProperty(prefix = "gbi.tracing.http-tracing",
+    @ConditionalOnProperty(prefix = "zyx.tracing.http-tracing",
             name = "enable-http-tracing", matchIfMissing = true)
     public RestTemplateTracingInterceptor restTemplateTracingInterceptor(
             final TracingProperties tracingProperties) {
