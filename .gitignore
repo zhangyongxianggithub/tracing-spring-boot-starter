@@ -26,4 +26,6 @@ replay_pid*
 **/.idea
 **/target
 **/.DS_Store
+**/.iml
+.flattened-pom.xml
 **/*.iml
